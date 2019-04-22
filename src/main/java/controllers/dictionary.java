@@ -23,9 +23,14 @@ public class dictionary {
         dictionary.put("book", "Quyển vở");
         dictionary.put("blue", "xanh");
         String vietnamese = dictionary.get(english);
-        model.addAttribute("english", english);
-        model.addAttribute("vietnamese", vietnamese);
-        return "index";
+        if( english.equals(vietnamese)) {
+            model.addAttribute("english", english);
+            model.addAttribute("vietnamese", vietnamese);
+            return "index";
+        }else {
+            return "error-404";
+        }
+
 
     }
 }
